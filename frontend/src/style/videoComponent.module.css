@@ -1,0 +1,262 @@
+/* connection page request style */
+.lobbyContainer {
+    max-width: 480px;
+    margin: 10vh auto;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .lobbyTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+  
+  .lobbyInput .MuiInputBase-root {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .lobbyButton {
+    padding: 10px 24px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    transition: background 0.3s ease;
+  }
+  
+  .lobbyButton:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+  }
+  
+  /* Preview video */
+  .previewVideoContainer {
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 12px;
+    /* overflow: hidden; */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .previewVideo {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .lobbyContainer {
+      padding: 24px 16px;
+      margin: 5vh auto;
+    }
+  
+    .lobbyTitle {
+      font-size: 1.5rem;
+    }
+  
+    .lobbyButton {
+      width: 100%;
+    }
+  }
+  
+
+/* Container for the entire meeting video */
+.meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    background: radial-gradient(circle at center, #010430 0%, #00001a 100%);
+    overflow: hidden;
+  }
+  
+  /* Small user video (e.g. self-view) */
+  .meetUserVideo {
+    position: absolute;
+    bottom: 10vh;
+    left: 2vw;
+    height: 20vh;
+    width: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .meetUserVideo:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Button container at the bottom center */
+  .buttonContainers {
+    position: absolute;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+  }
+  
+  .buttonContainers svg {
+    font-size: 2.5rem;
+    margin: 0 10px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .buttonContainers svg:hover {
+    transform: scale(1.2);
+    color: #ff5757;
+  }
+  
+  /* Video layout for conference members */
+  .conferenceView {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .conferenceView video {
+    width: 20vw;
+    height: 35vh;
+    min-width: 25vw;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Chat sidebar styling */
+  .chatRoom {
+    position: absolute;
+    top: 5vh;
+    right: 2vw;
+    height: 90vh;
+    width: 30vw;
+    background: linear-gradient(to bottom right, #ffffff, #f2f2f2);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 10;
+  }
+  
+  .chatRoom:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* Chat scrollbars */
+  .chatRoom::-webkit-scrollbar {
+    width: 8px;
+  }
+  .chatRoom::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  .chatRoom::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+  
+  /* Responsive chat for mobile */
+  @media (max-width: 768px) {
+    .chatRoom {
+      width: 90vw;
+      height: 80vh;
+      top: 10vh;
+      right: 5vw;
+    }
+  
+    .conferenceView video {
+      width: 80vw;
+      height: 25vh;
+    }
+  
+    .meetUserVideo {
+      left: 5vw;
+      height: 16vh;
+    }
+  
+    .buttonContainers svg {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Chat wrapper */
+  .chatContainer {
+    position: relative;
+    height: 100%;
+  }
+  
+  /* Bottom-anchored chat input area */
+  .chattingArea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 24px;
+    background: #fff;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    z-index: 5;
+  }
+  
+  /* Make input expand and fit space */
+  .chattingArea .MuiTextField-root {
+    flex: 1;
+  }
+  
+  /* Make the send button slightly larger and prominent */
+  .chattingArea .MuiButton-contained {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-transform: none;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .chattingArea {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 16px;
+    }
+  
+    .chattingArea .MuiButton-contained {
+      width: 100%;
+    }
+  }
+  

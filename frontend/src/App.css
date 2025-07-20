@@ -1,0 +1,96 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: nowrap; 
+  gap: 10px;
+  overflow-x: auto;   
+  white-space: nowrap;
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  .navControls {
+    gap: 8px;
+  }
+
+  .navBar h2 {
+    font-size: 1.2rem;
+  }
+
+  .navControls p {
+    font-size: 0.9rem;
+  }
+}
+
+
+.meetContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  height: 80vh;
+  gap: 5vw;
+  justify-content: center;
+}
+
+.leftPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightPanel img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.joinControls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .meetContainer {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .leftPanel,
+  .rightPanel {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .rightPanel img {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+
+
+}
