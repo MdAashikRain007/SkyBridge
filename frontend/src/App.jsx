@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Landing from './pages/Landing'
 import {Routes,Route,BrowserRouter as Router} from 'react-router-dom';
-import Authentication from './pages/authentication';
+import Authentication from './pages/Authentication';
 import { AuthProvider } from './contexts/AuthContext';
 import Home from './pages/Home';
 import VideoMeeting from './pages/VideoMeeting';
